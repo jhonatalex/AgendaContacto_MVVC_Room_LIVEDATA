@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SecondFragment">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="458dp"
+        android:layout_height="754dp"
+
+        android:layout_marginBottom="15dp"
+        android:src="@drawable/orig_4728"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <FrameLayout
+        android:layout_width="350dp"
+        android:layout_height="645dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="29dp"
+        android:background="#81101B1E"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/button_second"
+                android:layout_width="290dp"
+                android:layout_height="55dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="445dp"
+                android:text="Registrar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/imput_Name"
+                android:layout_width="290dp"
+                android:layout_height="55dp"
+                android:layout_marginStart="29dp"
+                android:layout_marginTop="58dp"
+                android:background="#C9D1C8"
+                android:ems="10"
+                android:gravity="center_horizontal|center_vertical"
+                android:hint="Ingrese Nombre"
+                android:inputType="textPersonName"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/imput_LastName"
+                android:layout_width="290dp"
+                android:layout_height="55dp"
+                android:layout_marginStart="29dp"
+                android:layout_marginTop="121dp"
+                android:background="#C9D1C8"
+                android:ems="10"
+                android:gravity="center_horizontal|center_vertical"
+                android:hint="Ingrese Apellido"
+                android:inputType="textPersonName"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/imput_email"
+                android:layout_width="290dp"
+                android:layout_height="55dp"
+                android:layout_marginStart="29dp"
+                android:layout_marginTop="185dp"
+                android:background="#C9D1C8"
+                android:ems="10"
+                android:gravity="center_horizontal|center_vertical"
+                android:hint="Ingrese Email"
+                android:inputType="textPersonName"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/imput_actividad"
+                android:layout_width="290dp"
+                android:layout_height="55dp"
+                android:layout_marginStart="29dp"
+                android:layout_marginTop="248dp"
+                android:background="#C9D1C8"
+                android:ems="10"
+                android:gravity="center_horizontal|center_vertical"
+                android:hint="Profesion"
+                android:inputType="textPersonName"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="303dp"
+                android:layout_height="46dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="1dp"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="Ingresar Contacto"
+                android:textColor="#F8FFFFFF"
+                android:textSize="30sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/input_Phone"
+                android:layout_width="290dp"
+                android:layout_height="55dp"
+                android:layout_marginStart="29dp"
+                android:layout_marginTop="313dp"
+                android:background="#C9D1C8"
+                android:ems="10"
+                android:gravity="center_horizontal|center_vertical"
+                android:hint="Telefono"
+                android:inputType="phone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/input_Password"
+                android:layout_width="290dp"
+                android:layout_height="55dp"
+                android:layout_marginStart="29dp"
+                android:layout_marginTop="377dp"
+                android:background="#C9D1C8"
+                android:ems="10"
+                android:gravity="center_horizontal|center_vertical"
+                android:hint="Contraseña"
+                android:inputType="numberPassword"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
