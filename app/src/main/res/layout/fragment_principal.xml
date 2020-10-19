@@ -17,10 +17,10 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <FrameLayout
-        android:layout_width="350dp"
-        android:layout_height="645dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="373dp"
+        android:layout_height="701dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="29dp"
         android:background="#81101B1E"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,22 +31,46 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <FrameLayout
-                android:id="@+id/continer_detalle"
-                android:layout_width="348dp"
-                android:layout_height="240dp"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recicler_contact"
+                android:layout_width="369dp"
+                android:layout_height="426dp"
+                android:layout_marginTop="276dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:layout_width="367dp"
+                android:layout_height="61dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="210dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-            </FrameLayout>
+                <Button
+                    android:id="@+id/bt_eliminar"
+                    android:layout_width="120dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Agregar" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recicler_contact"
-                android:layout_width="349dp"
-                android:layout_height="376dp"
-                android:layout_marginTop="269dp"
+                <Button
+                    android:id="@+id/bt_eliminarAll"
+                    android:layout_width="109dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Eliminar Todos" />
+            </LinearLayout>
+
+            <fragment
+                android:id="@+id/fragment"
+                android:name="com.example.agendaevaluacion_mod_4.DetalleContact"
+                android:layout_width="369dp"
+                android:layout_height="205dp"
+                android:layout_marginTop="4dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </FrameLayout>

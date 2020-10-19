@@ -14,7 +14,7 @@ interface ContactDao {
     suspend fun getById(id:Int): Contacto
 
     @Query ("SELECT * FROM Contacto WHERE email =:emailL AND password =:contrasena")
-    suspend fun validateUser( emailL:String, contrasena:String):Contacto
+     fun validateUser( emailL:String, contrasena:String):LiveData<Contacto>
 
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)

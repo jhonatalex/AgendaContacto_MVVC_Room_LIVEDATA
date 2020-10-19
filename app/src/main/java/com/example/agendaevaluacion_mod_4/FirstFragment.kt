@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.example.agendaevaluacion_mod_4.Model.Contacto
 import com.example.agendaevaluacion_mod_4.viewModel.ContactViewModel
@@ -16,6 +18,8 @@ import kotlinx.android.synthetic.main.fragment_second.*
 
 
 class FirstFragment : Fragment() {
+
+    val myViewModel: ContactViewModel by viewModels()
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
@@ -28,7 +32,6 @@ class FirstFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val myViewModel:ContactViewModel by viewModels()
 
 
 
@@ -41,15 +44,30 @@ class FirstFragment : Fragment() {
             } else{
 
                 myViewModel.ValidateUser("${username.text}","${password_login.text}")
-                Toast.makeText(context,"Datos Registrados Correctamente ", Toast.LENGTH_LONG).show()
 
-                findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+
+                myViewModel.result.observe(viewLifecycleOwner, Observer {
+                    if (it) {
+                        findNavController().navigate(R.id.action_FirstFragment_to_principal)
+                    }else {
+                        Toast.makeText(context,"DATOS INCORRECTOS ",Toast.LENGTH_LONG).show()
+                    }
+
+                })
+
 
             }
 
 
-
-
         }
+
+        btn_login2.setOnClickListener {   findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment) }
+
+
+
+
+
+
+
     }
 }
