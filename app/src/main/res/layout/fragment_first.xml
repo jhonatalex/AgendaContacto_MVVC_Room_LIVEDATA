@@ -4,18 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/orig_4728"
-    android:backgroundTint="#4DFFFFFF"
+    android:background="@drawable/fondo_black"
     tools:context=".FirstFragment">
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="458dp"
-        android:layout_height="754dp"
-
-        android:src="@drawable/orig_4728"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/username"

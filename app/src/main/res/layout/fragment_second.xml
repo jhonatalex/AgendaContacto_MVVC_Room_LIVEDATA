@@ -4,17 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondo_black"
     tools:context=".SecondFragment">
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="458dp"
-        android:layout_height="754dp"
-
-        android:layout_marginBottom="15dp"
-        android:src="@drawable/orig_4728"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
 
     <FrameLayout
         android:layout_width="350dp"

@@ -33,6 +33,13 @@ class DetalleContact : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        txt_name.text = " "
+        txt_lastname.text =" "
+        txt_email.text = " "
+        txt_profe.text = " "
+        txt_phone.text = " "
+
+
         myViewModel.selected.observe(viewLifecycleOwner, Observer {
 
             if (it==null) {
@@ -41,7 +48,6 @@ class DetalleContact : Fragment() {
                 txt_email.text = " "
                 txt_profe.text = " "
                 txt_phone.text = " "
-
 
             }else{
                 txt_name.text = it.name

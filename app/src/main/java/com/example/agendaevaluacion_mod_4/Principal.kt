@@ -3,6 +3,8 @@ package com.example.agendaevaluacion_mod_4
 import android.app.AlertDialog
 import android.content.Context
 import android.content.DialogInterface
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -105,7 +107,6 @@ class Principal : Fragment(), AdapterContacts.passData {
                 })
             .show()
 
-
     }
 
     override fun passDetalle(contacto: Contacto) {
@@ -113,7 +114,13 @@ class Principal : Fragment(), AdapterContacts.passData {
     }
 
     override fun passCall(contacto: Contacto) {
-       Toast.makeText(context,contacto.phone, Toast.LENGTH_LONG).show()
+
+            val intent = Intent(Intent.ACTION_DIAL).apply {
+                data = Uri.parse("tel:${contacto.phone}")
+            }
+            startActivity(intent)
+
+       Toast.makeText(context,"LLAMANDO", Toast.LENGTH_LONG).show()
     }
 
 

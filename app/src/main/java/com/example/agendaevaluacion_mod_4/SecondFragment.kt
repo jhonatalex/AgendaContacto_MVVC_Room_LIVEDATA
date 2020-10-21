@@ -1,5 +1,6 @@
 package com.example.agendaevaluacion_mod_4
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -36,12 +37,22 @@ class SecondFragment : Fragment() {
 
         myViewModel.selected.observe(viewLifecycleOwner, androidx.lifecycle.Observer {
 
-                imput_Name.setText(it.name)
-                imput_LastName.setText(it.lastName)
-                imput_email.setText(it.email)
-                imput_actividad.setText(it.career)
-                input_Password.setText(it.password)
-                input_Phone.setText(it.phone)
+
+             if (it==null){
+
+                 clearAll()
+
+             }else{
+
+                 imput_Name.setText(it.name)
+                 imput_LastName.setText(it.lastName)
+                 imput_email.setText(it.email)
+                 imput_actividad.setText(it.career)
+                 input_Password.setText(it.password)
+                 input_Phone.setText(it.phone)
+
+             }
+
 
         })
 
@@ -77,13 +88,14 @@ class SecondFragment : Fragment() {
 
    fun clearAll(){
 
-        imput_Name.setText("")
-        imput_LastName.setText("")
-        imput_email.setText("")
-        imput_actividad.setText("")
-        input_Password.setText("")
-        input_Phone.setText("")
+        imput_Name?.setText("")
+        imput_LastName?.setText("")
+        imput_email?.setText("")
+        imput_actividad?.setText("")
+        input_Password?.setText("")
+        input_Phone?.setText("")
     }
+
 
 
 }

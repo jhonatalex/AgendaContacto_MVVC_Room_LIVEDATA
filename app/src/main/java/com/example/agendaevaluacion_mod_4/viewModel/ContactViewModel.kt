@@ -2,13 +2,12 @@ package com.example.agendaevaluacion_mod_4.viewModel
 
 import android.app.Application
 import android.content.ClipData
-import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.*
+import com.example.agendaevaluacion_mod_4.Model.ContactDao
 import com.example.agendaevaluacion_mod_4.Model.ContactRepository
 import com.example.agendaevaluacion_mod_4.Model.Contacto
 import com.example.agendaevaluacion_mod_4.Model.DataBaseContact
+import kotlinx.coroutines.launch
 
 class ContactViewModel(context: Application): AndroidViewModel(context) {
 
@@ -16,8 +15,8 @@ class ContactViewModel(context: Application): AndroidViewModel(context) {
 
     val viewListContact: LiveData<List<Contacto>>
 
-    private val _result= MutableLiveData<Boolean>()
-    val result: LiveData<Boolean> get()=_result
+     val result= MutableLiveData<Boolean>()
+
 
 
     //LIVE DATA PARA PARA EL DETALLE
@@ -37,12 +36,19 @@ class ContactViewModel(context: Application): AndroidViewModel(context) {
     }
 
     fun ValidateUser(email:String, pass:String){
-        val User= myContactRepository.validUser(email, pass)
-                if (User==null){ _result.value=false
-                }else{ _result.value= true }
+
+        viewModelScope.launch {
+            val User1: Boolean= myContactRepository.validUser(email, pass)
+
+            if (User1 == false) {
+                result.value = false
+            } else {
+                result.value = true
+            }
+
+        }
 
     }
-
 
     fun insertContact(user :Contacto){
         myContactRepository.insertContact(user)
