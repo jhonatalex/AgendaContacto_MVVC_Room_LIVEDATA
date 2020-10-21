@@ -52,8 +52,7 @@ class SecondFragment : Fragment() {
                  input_Phone.setText(it.phone)
 
              }
-
-
+            
         })
 
 
@@ -79,7 +78,6 @@ class SecondFragment : Fragment() {
                 clearAll()
                 findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
             }
-
 
         }
 
