@@ -12,10 +12,10 @@ import kotlinx.coroutines.launch
 class ContactViewModel(context: Application): AndroidViewModel(context) {
 
     private val myContactRepository: ContactRepository
-
     val viewListContact: LiveData<List<Contacto>>
 
-     val result= MutableLiveData<Boolean>()
+
+
 
 
 
@@ -35,19 +35,10 @@ class ContactViewModel(context: Application): AndroidViewModel(context) {
 
     }
 
-    fun ValidateUser(email:String, pass:String){
 
-        viewModelScope.launch {
-            val User1: Boolean= myContactRepository.validUser(email, pass)
+    fun ValidateUser(email:String, pass:String):LiveData<Contacto>{
 
-            if (User1 == false) {
-                result.value = false
-            } else {
-                result.value = true
-            }
-
-        }
-
+        return myContactRepository.validateUser(email,pass)
     }
 
     fun insertContact(user :Contacto){

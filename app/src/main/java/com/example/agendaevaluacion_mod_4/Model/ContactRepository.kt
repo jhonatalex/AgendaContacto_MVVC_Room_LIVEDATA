@@ -11,22 +11,17 @@ import java.util.Optional.empty
 
 
 class ContactRepository(private val myContactDao: ContactDao) {
-    var flag:Boolean=false
+
 
     val allContactLiveData=myContactDao.getAllContact()
 
 
-    fun validUser( emailL:String, contrasena:String):Boolean {
 
-        CoroutineScope(Dispatchers.IO).launch {
-            var User1: Contacto = myContactDao.validateUser(emailL, contrasena)
-
-            if (User1==null){ flag=false } else {flag=true  }
-
-        }
-
-        return flag
+    fun validateUser(email:String,pass:String):LiveData<Contacto>{
+        return myContactDao.validateUser(email,pass)
     }
+
+
 
 
 

@@ -37,24 +37,26 @@ class FirstFragment : Fragment() {
 
         view.findViewById<Button>(R.id.btn_login).setOnClickListener {
 
-            if (username.text.isEmpty()||password_login.text.isEmpty()) {
-                Toast.makeText(context,"Rellene Todos Los campos ", Toast.LENGTH_LONG).show()
-            } else{
-                myViewModel.ValidateUser("${username.text}","${password_login.text}")
+            if (username.text.isEmpty() || password_login.text.isEmpty()) {
+                Toast.makeText(context, "Rellene Todos Los campos ", Toast.LENGTH_LONG).show()
+
+            } else {
+
+                myViewModel.ValidateUser("${username.text}", "${password_login.text}")
+                    .observe(viewLifecycleOwner, Observer {
+
+                        if (it == null) {
+                            Toast.makeText(context, "DATOS INCORRECTOS ", Toast.LENGTH_LONG).show()
+                        } else {
+                            findNavController().navigate(R.id.action_FirstFragment_to_principal)
+                        }
+                    })
+
+
             }
 
 
         }
-
-        myViewModel.result.observe(viewLifecycleOwner, Observer {
-            if (it) {
-                findNavController().navigate(R.id.action_FirstFragment_to_principal)
-            }else {
-                Toast.makeText(context,"DATOS INCORRECTOS ",Toast.LENGTH_LONG).show()
-            }
-
-        })
-
 
 
 

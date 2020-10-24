@@ -52,7 +52,7 @@ class SecondFragment : Fragment() {
                  input_Phone.setText(it.phone)
 
              }
-            
+
         })
 
 
